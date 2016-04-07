@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GulpVs2015</title>
+    <base href="/">
+    @AssetsHelper.Css("./css/vendors.css")
+    @AssetsHelper.Css("./css/app.css")
+</head>
+<body ng-app="app">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="/">Project name</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item" ng-class="{ active: isState('home')}">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" ng-class="{ active: isState('about')}">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item" ng-class="{ active: isState('contact')}">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container" ng-controller="RootCtrl">
+        <ng-view class="navigation" ng-cloak></ng-view>
+        <br>
+        <div>
+            <h1>config.json</h1>
+            <p>
+                <h5>css bundles</h5>
+                <ul ng-repeat="bundle in config.bundles.css">
+                    <b ng-bind="(bundle.dist || 'spare') + ':'"></b>
+                    <li ng-repeat="src in bundle.src"><a href="{{src}}" target="_blank"><code ng-bind="src"></code></a></li>
+                </ul>
+                <h5>js bundles</h5>
+                <ul ng-repeat="bundle in config.bundles.js">
+                    <b ng-bind="(bundle.dist || 'spare') + ':'"></b>
+                    <li ng-repeat="src in bundle.src"><a href="{{src}}" target="_blank"><code ng-bind="src"></code></a></li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <!--TEMPLATES-->
+    <script type="text/ng-template" id="partial/home">
+        <div class="starter-template">
+            <h1>Bootstrap starter template</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="partial/about">
+        <div class="starter-template">
+            <h1>About</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="partial/contact">
+        <div class="starter-template">
+            <h1>Contact</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        </div>
+    </script>
+    @AssetsHelper.Js("./js/vendors.js")
+    @AssetsHelper.Js("./js/app.js")
+</body>
+</html>

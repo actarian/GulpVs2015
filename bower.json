@@ -1,0 +1,14 @@
+{
+  "name": "bower.json",
+  "description": "assets dependancy configuration file",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.2",
+    "angular-route": "1.5.2",
+    "angular-animate": "1.5.2",
+    "animate.css": "3.4.0"
+  }
+}

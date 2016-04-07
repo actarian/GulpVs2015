@@ -1,0 +1,65 @@
+{
+    "name": "config",
+    "paths": {
+        "src": "./",
+        "root": "./",
+        "node": "./node_modules",
+        "bower": "./bower_components"
+    },
+    "folders": {
+        "css": "/css",
+        "js": "/js"
+    },
+    "bundles": {
+        "css": [
+            {
+                "src": [
+                    "./css/bootstrap-4/bootstrap.css",
+                    "./bower_components/animate.css/animate.css"
+                ],
+                "dist": "./css/vendors.css"
+            },
+            {
+                "src": [
+                    "./css/app.css"
+                ]
+            }
+        ],
+        "js": [
+            {
+                "src": [
+                    "./bower_components/angular/angular.js",
+                    "./bower_components/angular-route/angular-route.js",
+                    "./bower_components/angular-animate/angular-animate.js"
+                ],
+                "dist": "./js/vendors.js"
+            },
+            {
+                "src": [
+                    "./js/app/utils/utils.js",
+                    "./js/app/app.js",
+                    "./js/app/animations/animations.js",
+                    "./js/app/directives/directives.js",
+                    "./js/app/models/models.js",
+                    "./js/app/services/services.js",
+                    "./js/app/controllers/controllers.js"
+                ],
+                "dist": "./js/app.js"
+            }
+        ]
+    },
+    "browserlist": [
+        "Chrome >= 30",
+        "Firefox >= 30",
+        "Explorer >= 9",
+        "Opera >= 20",
+        "Safari >= 6",
+        "iOS >= 5",
+        "Edge >= 12",
+        "ExplorerMobile >= 10"
+    ],
+    "server": {
+        "name": "localhost",
+        "port": 8181
+    }
+}

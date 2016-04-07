@@ -1,0 +1,11 @@
+npm-debug.log*
+/node_modules/
+/bower_components/
+/typings/
+/wwwroot/
+/bin/
+/obj/
+/properties/
+/.sass-cache/
+.DS_Store
+*~
