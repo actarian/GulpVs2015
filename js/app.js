@@ -540,9 +540,10 @@ app.config(['$httpProvider', '$routeProvider', '$locationProvider', function ($h
 }]);
 
 app.run(['$rootScope', function ($rootScope) {
-
+    var currentState = null;
     $rootScope.$on("$routeChangeSuccess", function ($scope, nextRoute, lastRoute) {
-        console.log("$routeChangeSuccess", nextRoute.$$route.state);
+        currentState = nextRoute.$$route.state;
+        console.log("$routeChangeSuccess", currentState);
         setTimeout(function () {
             if (document.body.scrollTop !== undefined) {
                 document.body.scrollTop = 0;
@@ -551,7 +552,9 @@ app.run(['$rootScope', function ($rootScope) {
             }
         }, 100);
     });
-
+    $rootScope.isState = function(state) {
+        return state === currentState;
+    };
 }]);
 
 

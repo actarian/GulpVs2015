@@ -44,6 +44,6 @@ app.run(['$rootScope', function ($rootScope) {
         }, 100);
     });
     $rootScope.isState = function(state) {
-        return state == currentState;
+        return state === currentState;
     };
 }]);
