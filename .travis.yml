@@ -12,6 +12,3 @@ before_script:
 
 install:
   - npm install
-  
-script:
-  - npm start
