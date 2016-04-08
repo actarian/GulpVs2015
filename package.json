@@ -44,6 +44,7 @@
     },
     "scripts": {
         "bower": "bower install && typings install",
-        "start": "gulp start"
+        "start": "gulp start",
+        "test": "gulp test"
     }
 }
